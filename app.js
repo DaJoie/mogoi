@@ -90,10 +90,9 @@ function move(){
     }
     for (let i = 1; i < snake.length; i++) {
         if (snakeX == snake[i][0] && snakeY == snake[i][1]) {
+            GameOver();
             restart();
-            
-            GameOver()
-    }
+        }
     }
     
     if(snakeX * nud == alimX * nud && snakeY * nud == alimY * nud){
@@ -197,8 +196,7 @@ function hodloh(e){
 }
 hodloh();
 function GameOver(){
-   
-    gameOver = true;
-            alert("Game Over");
-
+    
+    alert("Game Over, Your score is: " + snake.length);
+    restart()
 }
